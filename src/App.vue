@@ -1,18 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <RadioButton v-for="(animal, index) in animals" :key="index" :animal=animal></RadioButton>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RadioButton from './components/RadioButton'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    RadioButton
+  },
+  data() {
+    return {
+      animals: [
+        {id: '1', name: 'Cat'},
+        {id: '2', name: 'Dog'}
+      ]
+    }
+  },
 }
 </script>
 
